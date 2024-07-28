@@ -59,6 +59,12 @@ class App extends Component {
 		}
 	};
 
+	handleKeyPress = (event) => {
+		if (event.key === "Enter") {
+			this.addItem();
+		}
+	};
+
 	render() {
 		return (
 			<Container>
@@ -81,6 +87,7 @@ class App extends Component {
 								size="lg"
 								value={this.state.userInput}
 								onChange={(item) => this.updateInput(item.target.value)}
+								onKeyDown={this.handleKeyPress}
 								aria-label="add something"
 								aria-describedby="basic-addon2"
 							/>
